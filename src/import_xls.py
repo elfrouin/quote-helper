@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import requests
-
+import os
 
 class ImportDisp:
     def __init__(self, name_file):
@@ -14,9 +14,10 @@ class ImportDisp:
         output.write(resp.content)
         output.close()
 
-class ImportRequest:
+class ImportDemand:
     def __init__(self, name_file):
         self.name_file= name_file
 
-    def load_request(self):
-        path_request='.xls'
+    def load_demand(self):
+        path_request='../data-test/test.xlsx'
+        os.system('cp %s %s' %(path_request, self.name_file))
